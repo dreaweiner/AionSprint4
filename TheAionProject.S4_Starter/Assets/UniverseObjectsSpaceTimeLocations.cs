@@ -16,7 +16,7 @@ namespace TheAionProject
             new SpaceTimeLocation
             {
                 CommonName = "Aion Base Lab",
-                SpaceTimeLocationID = 1,
+                SpaceTimeLocationId = 1,
                 UniversalDate = 386759,
                 UniversalLocation = "P-3, SS-278, G-2976, LS-3976",
                 Description = "The Norlon Corporation research facility located in " +
@@ -32,7 +32,7 @@ namespace TheAionProject
             new SpaceTimeLocation
             {
                 CommonName = "Felandrian Plains",
-                SpaceTimeLocationID = 2,
+                SpaceTimeLocationId = 2,
                 UniversalDate = 386759,
                 UniversalLocation = "P-2, SS-85, G-2976, LS-3976",
                 Description = "The Felandrian Plains are a common destination for tourist. " +
@@ -46,7 +46,7 @@ namespace TheAionProject
             new SpaceTimeLocation
             {
                 CommonName = "Xantoria Market",
-                SpaceTimeLocationID = 3,
+                SpaceTimeLocationId = 3,
                 UniversalDate = 386759,
                 UniversalLocation = "P-6, SS-3978, G-2976, LS-3976",
                 Description = "The Xantoria market, once controlled by the Thorian elite, is now an " +
@@ -60,7 +60,7 @@ namespace TheAionProject
             new SpaceTimeLocation
             {
                 CommonName = "Norlon Corporate Headquarters",
-                SpaceTimeLocationID = 4,
+                SpaceTimeLocationId = 4,
                 UniversalDate = 386759,
                 UniversalLocation = "P-3, SS-278, G-2976, LS-3976",
                 Description = "The Norlon Corporation Headquarters is located in just outside of Detroit Michigan." +

@@ -548,7 +548,7 @@ namespace TheAionProject
         /// </summary>
         public void DisplayTravelerInfo()
         {
-            SpaceTimeLocation currentSpaceTimeLocation = _gameUniverse.GetSpaceTimeLocationById(_gameTraveler.SpaceTimeLocationID);
+            SpaceTimeLocation currentSpaceTimeLocation = _gameUniverse.GetSpaceTimeLocationById(_gameTraveler.SpaceTimeLocationId);
             DisplayGamePlayScreen("Traveler Information", Text.TravelerInfo(_gameTraveler, currentSpaceTimeLocation), ActionMenu.MainMenu, "");
         }
 
@@ -557,8 +557,13 @@ namespace TheAionProject
         /// </summary>
         public void DisplayCurrentLocationInfo()
         {
-            SpaceTimeLocation currentSpaceTimeLocation = _gameUniverse.GetSpaceTimeLocationById(_gameTraveler.SpaceTimeLocationID);
+            SpaceTimeLocation currentSpaceTimeLocation = _gameUniverse.GetSpaceTimeLocationById(_gameTraveler.SpaceTimeLocationId);
             DisplayGamePlayScreen("Current Location", Text.CurrentLocationInfo(currentSpaceTimeLocation), ActionMenu.MainMenu, "");
+        }
+
+        public void DisplayListOfAllNpcObjects()
+        {
+            DisplayGamePlayScreen("List: NPC Objects", Text.ListAllNpcObjects(_gameUniverse.Npcs), ActionMenu.AdminMenu, "");
         }
 
         /// <summary>
@@ -569,12 +574,12 @@ namespace TheAionProject
             //
             // get current space-time location
             //
-            SpaceTimeLocation currentSpaceTimeLocation = _gameUniverse.GetSpaceTimeLocationById(_gameTraveler.SpaceTimeLocationID);
+            SpaceTimeLocation currentSpaceTimeLocation = _gameUniverse.GetSpaceTimeLocationById(_gameTraveler.SpaceTimeLocationId);
 
             //
             // get list of game objects in current space-time location
             //
-            List<GameObject> gameObjectsInCurrentSpaceTimeLocation = _gameUniverse.GetGameObjectsBySpaceTimeLocationId(_gameTraveler.SpaceTimeLocationID);
+            List<GameObject> gameObjectsInCurrentSpaceTimeLocation = _gameUniverse.GetGameObjectsBySpaceTimeLocationId(_gameTraveler.SpaceTimeLocationId);
 
             string messageBoxText = Text.LookAround(currentSpaceTimeLocation) + Environment.NewLine + Environment.NewLine;
             messageBoxText += Text.GameObjectsChooseList(gameObjectsInCurrentSpaceTimeLocation);
@@ -645,7 +650,7 @@ namespace TheAionProject
             //
             // get a list of game objects in the current space-time location
             //
-            List<GameObject> gameObjectsInSpaceTimeLocation = _gameUniverse.GetGameObjectsBySpaceTimeLocationId(_gameTraveler.SpaceTimeLocationID);
+            List<GameObject> gameObjectsInSpaceTimeLocation = _gameUniverse.GetGameObjectsBySpaceTimeLocationId(_gameTraveler.SpaceTimeLocationId);
 
             if (gameObjectsInSpaceTimeLocation.Count > 0)
             {
@@ -661,7 +666,7 @@ namespace TheAionProject
                     //
                     // validate integer as a valid game object id and in current location
                     //
-                    if (_gameUniverse.IsValidGameObjectByLocationId(gameObjectId, _gameTraveler.SpaceTimeLocationID))
+                    if (_gameUniverse.IsValidGameObjectByLocationId(gameObjectId, _gameTraveler.SpaceTimeLocationId))
                     {
                         validGamerObjectId = true;
                     }
@@ -692,7 +697,7 @@ namespace TheAionProject
             //
             // get a list of traveler objects in the current space-time location
             //
-            List<TravelerObject> travelerObjectsInSpaceTimeLocation = _gameUniverse.GetTravelerObjectsBySpaceTimeLocationId(_gameTraveler.SpaceTimeLocationID);
+            List<TravelerObject> travelerObjectsInSpaceTimeLocation = _gameUniverse.GetTravelerObjectsBySpaceTimeLocationId(_gameTraveler.SpaceTimeLocationId);
 
             if (travelerObjectsInSpaceTimeLocation.Count > 0)
             {
@@ -708,7 +713,7 @@ namespace TheAionProject
                     //
                     // validate integer as a valid game object id and in current location
                     //
-                    if (_gameUniverse.IsValidTravelerObjectByLocationId(gameObjectId, _gameTraveler.SpaceTimeLocationID))
+                    if (_gameUniverse.IsValidTravelerObjectByLocationId(gameObjectId, _gameTraveler.SpaceTimeLocationId))
                     {
                         TravelerObject travelerObject = _gameUniverse.GetGameObjectById(gameObjectId) as TravelerObject;
                         if (travelerObject.CanInventory)
